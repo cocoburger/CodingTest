@@ -21,5 +21,66 @@ package com.coding.quicksort;
  */
 public class QuickSort {
 
+	public static void sort(int[] a) {
+		l_pivot_sort(a, 0, a.length - 1);
+	}
 	
+	
+	/**
+	 * 왼쪽 피벗 선택 방식
+	 * @param a 정렬할 배열
+	 * @param lo 현재 부분배열의 왼쪽
+	 * @param hi 현재 부분배열의 오른쪽
+	 */
+	
+	private static void l_pivot_sort(int[] a, int lo, int hi) {
+		
+		/*
+		 * lo가 hi보다 크거나 같다면 정렬 할 원소가 1개 이하이므로
+		 * 정렬하지 않고 return한다.
+		 */
+		if(lo >= hi) {
+			return;
+		}
+		
+		/*
+		 * 피벗을 기준으로 요소들이 왼쪽과 오른쪽으로 약하게 정렬된 상태로
+		 * 만들어 준 뒤. 최종적으로 pivot의 위치를 얻는다.
+		 * 
+		 * 그리고 나서 해당 비벗을 기준으로 왼쪽 부분리스트와 오른쪽 부분리스트로 나누어
+		 * 분할정복을 해준다.
+		 * 
+		 * Partitioning :
+		 * 
+		 * 			a[left]					    left part			      right part
+		 * +------------------------------------------------------------------------------+
+		 * |  		pivot			|		element <= pivot	   |	element > pivot	  |
+		 * +------------------------------------------------------------------------------+
+		 * 
+		 *	result After Partitioning :
+		 *
+		 *		  left part                       a[lo]          		  right part
+		 * +------------------------------------------------------------------------------+
+		 * |  		pivot			|		element <= pivot	   |	element > pivot	  |
+		 * +------------------------------------------------------------------------------+
+		 * 
+		 * result : pivot = lo
+		 * 
+		 * Recursion:
+		 * 
+		 * l_pivot_sort(a, lo, pivot - 1) l_pivot_sort(a, pivot + 1, hi)
+		 * 
+		 * 		 *         left part                           right part
+		 * +-----------------------+             +-----------------------+
+		 * |   element <= pivot    |    pivot    |    element > pivot    |
+		 * +-----------------------+             +-----------------------+
+		 * lo                pivot - 1        pivot + 1                 hi
+		 * 
+		 * 
+		 * 
+		 */
+		
+		
+		
+	}
 }
